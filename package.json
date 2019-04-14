@@ -14,7 +14,7 @@
   },
   "scripts": {
     "prepublishOnly": "powershell ./prepublish.ps1",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cd examples && live-server",
     "update-dependencies": "ncu -u && npm update",
     "start": "webpack-dev-server --open",
     "build": "powershell ./build.ps1"

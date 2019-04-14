@@ -36,11 +36,11 @@ function draw() {
 ## More examples
 
 ### Noise Loop 2D
-![Noise Loop 3D Example](examples/images/noiseLoop2D.gif)
+![Noise Loop 2D Example](examples/images/noiseLoop2D.gif)
 
 ### Noise Loop 1D
 
-![Noise Loop 2D Example](examples/images/noiseLoop1D.gif)
+![Noise Loop 1D Example](examples/images/noiseLoop1D.gif)
 
 ### Noise Loop
 

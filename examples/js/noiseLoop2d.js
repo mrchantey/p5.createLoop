@@ -1,10 +1,10 @@
 function setup() {
-    createCanvas(window.innerWidth / 2 - 50, window.innerHeight / 2 - 50)
-    frameRate(30)
+    createCanvas(200, 200)
+    frameRate(20)
     background(0)
     fill(127)
     stroke(127)
-    createLoop()
+    createLoop(1, { gif: true })
     animLoop.noiseFrequency(0.1)
     colorMode(HSB, 1)
 }
