@@ -1,6 +1,6 @@
 # p5.createLoop
 
-Create GIF loopsp5.createLoop provides a simple and structured p5 library for creating animation loops in the browser. It is a lightweight wrapper of [createLoop](https://www.npmjs.com/package/createloop).
+Provides a simple and structured p5 library for creating animation loops in the browser. It is a lightweight wrapper of [createLoop](https://www.npmjs.com/package/createloop).
 
 **Ye be warned** This is a baby library and has a lot of growing up to do. Breaking changes ahoy.
 
@@ -11,7 +11,7 @@ Create GIF loopsp5.createLoop provides a simple and structured p5 library for cr
 html:
 ```html
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
-    <script src="https://unpkg.com/createloop@latest/p5.createloop.js"></script>
+    <script src="https://unpkg.com/p5.createloop@latest/dist/p5.createloop.js"></script>
 ```
 
 javascript:
