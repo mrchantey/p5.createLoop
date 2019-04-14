@@ -36,20 +36,20 @@ function draw() {
 ## More examples
 
 ### Noise Loop 2D
-![Noise Loop 3D Example](examples\images\noiseLoop2D.gif)
+![Noise Loop 3D Example](examples/images/noiseLoop2D.gif)
 
 ### Noise Loop 1D
 
-![Noise Loop 2D Example](examples\images\noiseLoop1D.gif)
+![Noise Loop 2D Example](examples/images/noiseLoop1D.gif)
 
 ### Noise Loop
 
-![Noise Loop Example](examples\images\noiseLoop.gif)
+![Noise Loop Example](examples/images/noiseLoop.gif)
 ### Noise Loop 2x
 
 This example uses two noise seeds, one for x and one for y.
 
-![Noise Loop 2x Example](examples\images\noiseLoop2x.gif)
+![Noise Loop 2x Example](examples/images/noiseLoop2x.gif)
 
 
 ## Documentation
