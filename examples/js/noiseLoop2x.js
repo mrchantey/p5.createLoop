@@ -1,32 +1,35 @@
 
 
-const seed1 = Math.random()
-const seed2 = Math.random()
-const freq1 = 0.5
-const freq2 = 1
-let amp1
-let amp2
+const seedX = Math.random()
+const seedY = Math.random()
+const freqX = 0.7
+const freqY = 0.6
+let ampX
+let ampY
 
 
 function setup() {
-    createCanvas(window.innerWidth, window.innerHeight / 2)
+    createCanvas(300, 300)
+    colorMode(HSB, 1, 1, 1)
     frameRate(30)
-    background(0)
+    background(255)
     fill(127)
-    createLoop(3)
-    amp1 = height / 3
-    amp2 = height / 3
+    noStroke()
+    createLoop(3, { gif: { startLoop: 1, endLoop: 2, fileName: "noiseLoop2x.gif" } })
+    ampX = width / 2.3
+    ampY = height / 2.3
 }
 
 function draw() {
-    background(0)
+    // background(255)
+    fill(animLoop.progress, 0.5, 1)
     translate(width / 2, height / 2)
-    animLoop.noiseSeed(seed1)
-    animLoop.noiseFrequency(freq1)
-    const x = animLoop.noise() * amp1
-    animLoop.noiseSeed(seed2)
-    animLoop.noiseFrequency(freq2)
-    const y = animLoop.noise() * amp2
+    animLoop.noiseSeed(seedX)
+    animLoop.noiseFrequency(freqX)
+    const x = animLoop.noise() * ampX
+    animLoop.noiseSeed(seedY)
+    animLoop.noiseFrequency(freqY)
+    const y = animLoop.noise() * ampY
 
-    ellipse(x, y, 20, 20)
+    ellipse(x, y, 50, 50)
 }

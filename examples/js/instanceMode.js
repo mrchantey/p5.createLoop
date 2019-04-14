@@ -1,18 +1,17 @@
 new p5(p => {
 
     p.setup = _ => {
-        p.createCanvas(400, 400)
+        p.createCanvas(300, 300)
+        p.colorMode(p.RGB, 1)
         p.frameRate(20)
         p.fill(0)
-        p.createLoop()
+        p.createLoop({ gif: { fileName: "instanceMode.gif" } })
     }
 
     p.draw = _ => {
-        p.background(255)
+        p.background(Math.sin(p.animLoop.theta) * 0.5 + 0.5)
         p.translate(p.width / 2, p.height / 2)
         const radius = 100
-        const x = Math.cos(p.animLoop.theta) * radius
-        const y = Math.sin(p.animLoop.theta) * radius
-        p.ellipse(x, y, 50, 50)
+        p.ellipse(0, 0, 50, 50)
     }
 })

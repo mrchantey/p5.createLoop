@@ -1,10 +1,10 @@
 function setup() {
-    createCanvas(200, 200)
+    createCanvas(600, 300)
     frameRate(20)
     background(0)
     fill(127)
     stroke(127)
-    createLoop(1, { gif: true })
+    createLoop(1, { gif: { fileName: "noiseLoop2d.gif" } })
     animLoop.noiseFrequency(0.1)
     colorMode(HSB, 1)
 }

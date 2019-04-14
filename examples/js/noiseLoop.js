@@ -1,14 +1,21 @@
 function setup() {
-    createCanvas(400, 400)
+    createCanvas(300, 300)
     frameRate(30)
-    createLoop()
-    animLoop.frequency(0.5)
-    gifLoop.noise.frequency = 0.5
+    createLoop({
+        gif: {
+            options: { quality: 5 },
+            fileName: "noiseLoop.gif",
+            startLoop: 1,
+            endLoop: 2
+        }
+    })
+    animLoop.noiseFrequency(0.4)
+    background(255)
 }
 
 function draw() {
-    background(255)
     translate(width / 2, height / 2)
-    const y = animLoop.noise() * height / 4
-    ellipse(0, y, 50, 50)
+    const x = cos(animLoop.theta) * width / 3
+    const y = animLoop.noise() * height / 3
+    ellipse(x, y, 50, 50)
 }
