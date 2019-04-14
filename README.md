@@ -117,6 +117,8 @@ Because the aim here is to get GIF loopin asap, this object provides some valuab
 
 ### patch notes
 
+0.0.4 - 14/04/2019
+    - fixed README image bug
 0.0.2 - 14/04/2019
     - using script tags in examples
 0.0.1 - 14/04/2019
