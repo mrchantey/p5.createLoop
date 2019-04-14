@@ -1,0 +1,60 @@
+<!-- this doc for testing only -->
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>p5.createLoop test</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #333333;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+    <script src="main.js"></script>
+
+    <script>
+
+        const seed1 = Math.random()
+        const seed2 = Math.random()
+        const freq1 = 0.5
+        const freq2 = 1
+        let amp1
+        let amp2
+
+
+        function setup() {
+            createCanvas(window.innerWidth, window.innerHeight / 2)
+            frameRate(30)
+            background(0)
+            fill(127)
+            // createLoop()
+            createLoop({ duration: 3, gif: true })
+            amp1 = height / 3
+            amp2 = height / 3
+        }
+
+        function draw() {
+            background(0)
+            translate(width / 2, height / 2)
+            animLoop.noiseSeed(seed1)
+            animLoop.noiseFrequency(freq1)
+            const x = animLoop.noise() * amp1
+            animLoop.noiseSeed(seed2)
+            animLoop.noiseFrequency(freq2)
+            const y = animLoop.noise() * amp2
+
+            ellipse(x, y, 20, 20)
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
