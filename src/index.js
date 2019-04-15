@@ -1,17 +1,10 @@
-// require('createloop');
-if (typeof p5 !== typeof undefined) {
-    // console.log("p5.createLoop: p5 script found");
-    init()
-} else {
-    window.p5 = require('p5');
-    if (typeof p5 !== typeof undefined) {
-        // console.log("p5.createLoop: p5 package found");
-        init()
+if (typeof p5 === typeof undefined) {
+    try {
+        window.p5 = require('p5');
+    } catch{
     }
-    else
-        console.warn('p5.createLoop: p5 not found');
 }
-
-function init() {
+if (typeof p5 !== typeof undefined)
     require('./p5.createLoop')();
-}
+else
+    console.warn('p5.createLoop: p5 not found');

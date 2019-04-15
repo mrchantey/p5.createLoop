@@ -4,6 +4,9 @@ module.exports = {
     devServer: {
         contentBase: './dist'
     },
+    externals: {
+        p5: 'p5'
+    },
     module: {
         rules: [
             {

@@ -16,9 +16,11 @@ function attachCreateLoop() {
     p5.prototype.createLoop = function (options = {}, options2 = {}) {
         const sketch = this
         const loopOptions = {
-            framesPerSecond: sketch._targetFrameRate,
+            framesPerSecond: sketch._targetFrameRate || sketch._frameRate || 60,
+            duration: 3,
             canvas: sketch.canvas
         }
+        // console.log();
         if (options !== undefined && isNaN(options))
             Object.assign(loopOptions, options)
         if (!isNaN(options))
