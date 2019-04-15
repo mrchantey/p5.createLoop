@@ -136,6 +136,8 @@ Because the aim here is to get GIF loopin asap, this object provides some valuab
 - Account for pixel density with GIF size
 
 ### patch notes
+- 0.0.17 - 15/04/2019
+    - updated to createLoop 0.0.6
 - 0.0.16 - 15/04/2019
     - can handle webpack without adding p5 to global namespace
 - 0.0.15 - 15/04/2019

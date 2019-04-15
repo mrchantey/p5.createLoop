@@ -4,7 +4,7 @@
   "description": "p5.createLoop provides a simple and structured p5 library for creating animation loops in the browser.",
   "main": "src/index.js",
   "dependencies": {
-    "createloop": "0.0.4",
+    "createloop": "0.0.6",
     "p5": "^0.8.0"
   },
   "devDependencies": {
