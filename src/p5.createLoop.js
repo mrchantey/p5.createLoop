@@ -3,7 +3,11 @@ const event = require('./event');
 
 module.exports = attachCreateLoop
 function attachCreateLoop() {
-    // console.log('p5 detected, attaching createLoop');
+    let p5 = typeof window.p5 === typeof undefined ? require('p5') : window.p5
+    if (typeof p5 === typeof undefined) {
+        console.error('p5.createLoop: p5 not found');
+        return
+    }
     const onInit = event()
     const onPreRender = event()
     const onPostRender = event()
