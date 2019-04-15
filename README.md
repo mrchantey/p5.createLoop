@@ -2,6 +2,10 @@
 
 Provides a simple and structured p5 library for creating animation loops in the browser. It is a lightweight wrapper of [createLoop](https://www.npmjs.com/package/createloop).
 
+Features include:
+- GIF image rendering
+- noise loops
+
 **Ye be warned** This is a baby library and has a lot of growing up to do. Breaking changes ahoy.
 
 ## Example
@@ -36,23 +40,34 @@ function draw() {
 
 ## More examples
 
-### Noise Loop
+### [Noise Loop](examples/js/noiseLoop.js)
+
+- Begins recording the GIF after the first loop
+- x position is cosine of animLoop.theta
 
 ![Noise Loop Example](examples/images_compressed/noiseLoop.gif)
-### Noise Loop 2x
 
-This example uses two noise seeds, one for x and one for y.
+### [Noise Loop 2x](examples/js/noiseLoop2x.js)
 
-![Noise Loop 2x Example](examples/images_compressed/noiseLoop2x.gif)
+- two noise seeds, one for x and one for y
 
-### Noise Loop 1D
+![Noise Loop 2x Example](examples/images/noiseLoop2x.gif)
+
+### [Noise Loop 1D](examples/js/noiseLoop1d.js)
+
+- a noise value for each x position
 
 ![Noise Loop 1D Example](examples/images_compressed/noiseLoop1d.gif)
 
-### Noise Loop 2D
+### [Noise Loop 2D](examples/js/noiseLoop2d.js)
+
+- a noise value for each x and y position
 
 ![Noise Loop 2D Example](examples/images_compressed/noiseLoop2d.gif)
-### Instance Mode
+
+### [Instance Mode](examples/js/instanceMode.js)
+
+- also works in instance mode
 
 ![Instance Mode Example](examples/images_compressed/instanceMode.gif)
 
