@@ -203,7 +203,7 @@ eval("module.exports = event\r\n\r\nfunction event() {\r\n    const listeners = 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("if (typeof p5 === typeof undefined) {\r\n    try {\r\n        window.p5 = __webpack_require__(/*! p5 */ \"p5\");\r\n    } catch{\r\n    }\r\n}\r\nif (typeof p5 !== typeof undefined)\r\n    __webpack_require__(/*! ./p5.createLoop */ \"./src/p5.createLoop.js\")();\r\nelse\r\n    console.warn('p5.createLoop: p5 not found');\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("// window.p5 = require('p5');\r\nif (typeof p5 !== typeof undefined)\r\n    __webpack_require__(/*! ./p5.createLoop */ \"./src/p5.createLoop.js\")();\r\nelse\r\n    console.warn('p5.createLoop: p5 not found');\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -215,17 +215,6 @@ eval("if (typeof p5 === typeof undefined) {\r\n    try {\r\n        window.p5 = 
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("__webpack_require__(/*! createLoop */ \"./node_modules/createLoop/src/index.js\");\r\nconst event = __webpack_require__(/*! ./event */ \"./src/event.js\");\r\n\r\nmodule.exports = attachCreateLoop\r\nfunction attachCreateLoop() {\r\n    // console.log('p5 detected, attaching createLoop');\r\n    const onInit = event()\r\n    const onPreRender = event()\r\n    const onPostRender = event()\r\n\r\n    p5.prototype.registerMethod('init', onInit.invoke)\r\n    p5.prototype.registerMethod('pre', onPreRender.invoke)\r\n    p5.prototype.registerMethod('post', onPostRender.invoke)\r\n\r\n    const createLoop = window.createLoop\r\n    p5.prototype.createLoop = function (options = {}, options2 = {}) {\r\n        const sketch = this\r\n        const loopOptions = {\r\n            framesPerSecond: sketch._targetFrameRate || sketch._frameRate || 60,\r\n            duration: 3,\r\n            canvas: sketch.canvas\r\n        }\r\n        // console.log();\r\n        if (options !== undefined && isNaN(options))\r\n            Object.assign(loopOptions, options)\r\n        if (!isNaN(options))\r\n            loopOptions.duration = options\r\n        if (options2 !== undefined)\r\n            Object.assign(loopOptions, options2)\r\n\r\n        console.log(`creating ${loopOptions.duration} second loop at ${loopOptions.framesPerSecond} fps`);\r\n        sketch.animLoop = createLoop(loopOptions)\r\n        if (sketch._isGlobal)\r\n            window.animLoop = sketch.animLoop\r\n        onPreRender.addListener(sketch.animLoop.preRender)\r\n        onPostRender.addListener(sketch.animLoop.postRender)\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/p5.createLoop.js?");
-
-/***/ }),
-
-/***/ "p5":
-/*!*********************!*\
-  !*** external "p5" ***!
-  \*********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("if(typeof p5 === 'undefined') {var e = new Error(\"Cannot find module 'p5'\"); e.code = 'MODULE_NOT_FOUND'; throw e;}\nmodule.exports = p5;\n\n//# sourceURL=webpack:///external_%22p5%22?");
 
 /***/ })
 

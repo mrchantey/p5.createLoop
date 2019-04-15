@@ -132,6 +132,8 @@ Because the aim here is to get GIF loopin asap, this object provides some valuab
 
 
 ### patch notes
+- 0.0.15 -15/04/2019
+    - p5 must be externally required
 - 0.0.12 -15/04/2019
     - remove full size images from package
 - 0.0.11 -15/04/2019
