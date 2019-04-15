@@ -132,6 +132,9 @@ Because the aim here is to get GIF loopin asap, this object provides some valuab
 
 
 ### patch notes
+- 0.0.10 -15/04/2019
+    - enabled use as a package
+    - added p5 as dependency
 - 0.0.6 -15/04/2019
     - compressed example images
 - 0.0.4 - 14/04/2019
