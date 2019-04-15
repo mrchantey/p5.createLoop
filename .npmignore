@@ -1,7 +1,12 @@
 
 **/images
 **/images_compressed
-
+**/examples
+*.ps1
+dist/index.html
+dist/main.js
+.gitignore
+webpack.config.js
 
 ## standard NODE ignore
 
