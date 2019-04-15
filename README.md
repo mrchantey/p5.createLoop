@@ -6,7 +6,7 @@ Provides a simple and structured p5 library for creating animation loops in the 
 
 ## Example
 
-![p5 simple example](examples/images/simpleLoop.gif)
+![p5 simple example](examples/images_compressed/simpleLoop.gif)
 
 html:
 ```html
@@ -31,29 +31,30 @@ function draw() {
     const y = sin(animLoop.theta) * radius
     ellipse(x, y, 50, 50)
 }
+
 ```
 
 ## More examples
 
 ### Noise Loop
 
-![Noise Loop Example](examples/images/noiseLoop.gif)
+![Noise Loop Example](examples/images_compressed/noiseLoop.gif)
 ### Noise Loop 2x
 
 This example uses two noise seeds, one for x and one for y.
 
-![Noise Loop 2x Example](examples/images/noiseLoop2x.gif)
+![Noise Loop 2x Example](examples/images_compressed/noiseLoop2x.gif)
 
 ### Noise Loop 1D
 
-![Noise Loop 1D Example](examples/images/noiseLoop1d.gif)
+![Noise Loop 1D Example](examples/images_compressed/noiseLoop1d.gif)
 
 ### Noise Loop 2D
 
-![Noise Loop 2D Example](examples/images/noiseLoop2d.gif)
+![Noise Loop 2D Example](examples/images_compressed/noiseLoop2d.gif)
 ### Instance Mode
 
-![Instance Mode Example](examples/images/instanceMode.gif)
+![Instance Mode Example](examples/images_compressed/instanceMode.gif)
 
 
 
@@ -116,10 +117,11 @@ Because the aim here is to get GIF loopin asap, this object provides some valuab
 
 
 ### patch notes
-
-0.0.4 - 14/04/2019
+- 0.0.6 -15/04/2019
+    - compressed example images
+- 0.0.4 - 14/04/2019
     - fixed README image bug
-0.0.2 - 14/04/2019
+- 0.0.2 - 14/04/2019
     - using script tags in examples
-0.0.1 - 14/04/2019
+- 0.0.1 - 14/04/2019
     - initial release

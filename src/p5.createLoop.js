@@ -27,6 +27,7 @@ function attachCreateLoop() {
         if (options2 !== undefined)
             Object.assign(loopOptions, options2)
 
+        console.dir(loopOptions);
         sketch.animLoop = createLoop(loopOptions)
         if (sketch._isGlobal)
             window.animLoop = sketch.animLoop
