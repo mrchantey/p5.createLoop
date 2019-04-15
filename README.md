@@ -132,6 +132,8 @@ Because the aim here is to get GIF loopin asap, this object provides some valuab
 
 
 ### patch notes
+- 0.0.12 -15/04/2019
+    - remove full size images from package
 - 0.0.11 -15/04/2019
     - removed p5 from bundle
     - where p5._targetFrameRate is undefined, uses p5._frameRate instead
