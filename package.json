@@ -23,8 +23,20 @@
     "type": "git",
     "url": "git+https://github.com/piratesjustar/p5.createLoop.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "createLoop",
+    "p5",
+    "create",
+    "loop",
+    "animation",
+    "processing",
+    "gif",
+    "noiseloop",
+    "noise",
+    "perlin",
+    "simplex"
+  ],
+  "author": "Peter Hayman",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/piratesjustar/p5.createLoop/issues"
