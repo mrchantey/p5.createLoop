@@ -1,12 +1,12 @@
 # p5.createLoop
 
-Provides a simple and structured p5 library for creating animation loops in the browser. It is a lightweight wrapper of [createLoop](https://www.npmjs.com/package/createloop).
+Create animation loops with noise and GIF exports in one line of code. This library is a lightweight wrapper of [createLoop](https://www.npmjs.com/package/createloop) and provides a simple and structured workflow for creating animation loops in p5.js.
 
 Features include:
 - GIF image rendering
 - noise loops
 
-**Ye be warned** This is a baby library and has a lot of growing up to do. Breaking changes ahoy.
+**Ye be warned** This is a baby library and has a lot of growing up to do. Bugs and breaking changes ahoy.
 
 ## Example
 
@@ -77,6 +77,7 @@ function draw() {
 ## Documentation
 
 p5.createLoop works to make creating animation loops feel native to p5. The built in p5 `frameRate()` function will also set the delay between GIF frames.
+The GIF encoder [gif.js](https://github.com/jnordberg/gif.js) uses web workers to render the GIF asynchronously. By default, the GIF will be rendered alongside the sketch and can be downloaded by clicking on it.
 
 When a sketch is initialized the following are attached to it.
 
@@ -87,48 +88,71 @@ This function can be called in two ways:
 createLoop(options)
 createLoop(duration,options)
 ```
-It initializes the loop and can receive several options:
 
-| Name              | Default     | Description                                                                                                                                |
-| ----------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `duration`        | `3`         | sets the duration in seconds of the loop.                                                                                                  |
-| `framesPerSecond` | `30`        | approximate fps of the loop                                                                                                                |
-| `noise`           | `undefined` | options to be passed to noise module. see [noise options](README.md#noise-options)                                                         |
-| `gif`             | `false`     | can accept `true` or `options` to be passed to GIF module. Will not create GIF if left undefined. see [gif options](README.md#gif-options) |
+### createLoop()
+
+This method in the global namespace will return a loop instance. It can receive servarl arguments:
+
+| Name              | Default   | Description                                                                                                                                |
+| ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `duration`        | `3`       | sets the duration in seconds of the loop.                                                                                                  |
+| `framesPerSecond` | `30`      | approximate fps of the loop                                                                                                                |
+| `noise`           | `options` | See [noise options](README.md#noise-options)                                                                                               |
+| `gif`             | `false`   | can accept `true` or `options` to be passed to GIF module. Will not create GIF if left undefined. See [gif options](README.md#gif-options) |
+
+```js
+//Options can be passed as an object
+createLoop({
+    noise:{
+        radius:3,
+        seed:99
+    }
+})
+//or as camelCase
+createLoop({
+        noiseRadius:3,
+        noiseSeed:99
+    })
+```
 
 #### noise options
 
-| Name        | Default         | Description                                                                                            |
-| ----------- | --------------- | ------------------------------------------------------------------------------------------------------ |
-| `frequency` | `1`             | The 'randomness' of the noise. Behind the scenes this sets the radius of a circle in a 2D noise field. |
-| `seed`      | `Math.random()` | The seed of the noise field                                                                            |
+| Name     | Default                  | Description                                                                                                    |
+| -------- | ------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| `radius` | `1`                      | radius of the circle in a noise field to query                                                                 |
+| `seed`   | `Math.random() * 999999` | noise field offset                                                                                             |
+| `theta`  | `loop.theta`             | By defalt is elapsed loop progress around a circle. This can be set in noise functions but not in `createLoop` |
+
 
 #### gif options
 
-| Name        | Default    | Description                                                                                                             |
-| ----------- | ---------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `render`    | `true`     | create an image element and render the GIF to the webpage. Clicking on the image will begin downlaoding the GIF.        |
-| `open`      | `false`    | open the gif image in a new tab or window                                                                               |
-| `download`  | `false`    | download the gif automatically                                                                                          |
-| `startLoop` | `0`        | loop index to begin recording the GIF                                                                                   |
-| `endLoop`   | `1`        | loop index to end recording the GIF                                                                                     |
-| `canvas`    | `<canvas>` | The canvas to render. By default this is the first instance of a canvas on the webpage                                  |
-| `options`   | `{}`       | options to pass to gif.js encoder. see [gif.js documentation](https://github.com/jnordberg/gif.js#user-content-options) |
-
+| Name        | Default     | Description                                                                                                             |
+| ----------- | ----------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `render`    | `true`      | create an image element and render the GIF to the webpage. Clicking on the image will begin downlaoding the GIF         |
+| `open`      | `false`     | open the gif image in a new tab or window                                                                               |
+| `download`  | `false`     | download the gif automatically                                                                                          |
+| `fileName`  | `image.gif` | name of the downloaded GIF file                                                                                         |
+| `startLoop` | `0`         | loop index to begin recording the GIF                                                                                   |
+| `endLoop`   | `1`         | loop index to end recording the GIF                                                                                     |
+| `canvas`    | `<canvas>`  | the canvas to render. By default this is the first instance of a canvas on the webpage                                  |
+| `options`   | `{}`        | options to pass to gif.js encoder. see [gif.js documentation](https://github.com/jnordberg/gif.js#user-content-options) |
 
 ### animLoop
 
-Because the aim here is to get GIF loopin asap, this object provides some valuable variables for animating loops. See documentation on [Loop Instance](https://github.com/piratesjustar/createLoop#loop-instance) for further details.
+Because the aim here is to get GIF loopin asap, this object provides some valuable properties and methods for animating loops. See documentation on [Loop Instance](https://github.com/piratesjustar/createLoop#loop-instance) for further details.
 
-| Name               | Description                                                                                                                                                                                                                 |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `progress`         | stage of completion of the loop. this is `elapsedFrames / framesPerLoop` and has a range of `0 to 1`                                                                                                                        |
-| `theta`            | progress around a circle with a a range of `0 to TWO_PI`                                                                                                                                                                    |
-| `noise()`          | returns a noise value between -1 and 1. This found by querying the position `loop.theta` with radius `noiseFrequency` on a circle in a 2D simplex noise field                                                               |
-| `noise1D(x)`       | Same as above also accepting an `x` value, providing a 1D line of noise for each frame                                                                                                                                      |
-| `noise2D(x,y)`     | Same as above also accepting a `y` value, providing a 2D plane of noise                                                                                                                                                     |
-| `noiseSeed()`      | set the noise seed. Behind the scenes every time this called with a new seed value, a new instance of [simplex-noise](https://github.com/jwagner/simplex-noise.js) is created. see [noise options](README.md#noise-options) |
-| `noiseFrequency()` | set the noise frequency, also described as `radius`. see [noise options](README.md#noise-options)                                                                                                                           |
+| Name                   | Description                                                                                                                                           |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `progress`             | stage of completion of the loop. this is `elapsedFrames / framesPerLoop` and has a range of `0 to 1`                                                  |
+| `theta`                | progress around a circle with a a range of `0 to TWO_PI`                                                                                              |
+| `noise(options)`       | returns a noise value between -1 and 1 from position `theta` with `radius` on a circle in a noise field. See [noise options](README.md#noise-options) |
+| `noise1D(x,options)`   | Same as above also accepting an `x` value, providing a 1D line of noise for each frame                                                                |
+| `noise2D(x,y,options)` | Same as above also accepting a `y` value, providing a 2D plane of noise                                                                               |
+| `noiseSeed()`          | set the noise seed                                                                                                                                    |
+| `noiseRadius()`        | set the default noise radius                                                                                                                          |
+
+
+
 
 
 ### TODO
@@ -136,6 +160,8 @@ Because the aim here is to get GIF loopin asap, this object provides some valuab
 - Account for pixel density with GIF size
 
 ### patch notes
+- 0.0.18 - 15/04/2019
+    - updated to createLoop 0.0.7
 - 0.0.17 - 15/04/2019
     - updated to createLoop 0.0.6
 - 0.0.16 - 15/04/2019

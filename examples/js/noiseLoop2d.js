@@ -4,8 +4,11 @@ function setup() {
     background(0)
     fill(127)
     stroke(127)
-    createLoop(1, { gif: { fileName: "noiseLoop2d.gif" } })
-    animLoop.noiseFrequency(0.1)
+    createLoop(1, {
+        gif: true,
+        gifFileName: "noiseLoop2d.gif",
+        noiseRadius: 0.1
+    })
     colorMode(HSB, 1)
 }
 

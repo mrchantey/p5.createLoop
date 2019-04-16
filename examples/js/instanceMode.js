@@ -11,7 +11,6 @@ new p5(p => {
     p.draw = _ => {
         p.background(Math.sin(p.animLoop.theta) * 0.5 + 0.5)
         p.translate(p.width / 2, p.height / 2)
-        const radius = 100
-        p.ellipse(0, 0, 50, 50)
+        p.ellipse(0, 0, 50)
     }
 })

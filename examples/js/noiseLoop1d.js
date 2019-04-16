@@ -4,8 +4,10 @@ function setup() {
     background(0)
     fill(127)
     stroke(127)
-    createLoop({ gif: { options: { repeat: -1 }, fileName: "noiseLoop1d.gif" } })
-    animLoop.noiseFrequency(0.3)
+    createLoop({
+        gif: { options: { repeat: -1 }, fileName: "noiseLoop1d.gif" },
+        noiseRadius: 0.3
+    })
 }
 
 function draw() {
