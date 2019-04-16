@@ -146,10 +146,9 @@ Because the aim here is to get GIF loopin asap, this object provides some valuab
 | `noise2D(x,y,options)` | Same as above also accepting a `y` value, providing a 2D plane of noise                                                                               |
 | `noiseSeed()`          | set the noise seed                                                                                                                                    |
 | `noiseRadius()`        | set the default noise radius                                                                                                                          |
+### Contributions
 
-
-
-
+Climb aboard! Make an issue or pull request on the [gitHub page](https://github.com/piratesjustar/p5.createLoop)
 
 ### TODO
 

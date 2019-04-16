@@ -3,6 +3,7 @@
 **/images_compressed
 **/examples
 **/scripts
+**/docs
 
 *.ps1
 dist/index.html
