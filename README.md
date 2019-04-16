@@ -89,10 +89,6 @@ createLoop(options)
 createLoop(duration,options)
 ```
 
-### createLoop()
-
-This method in the global namespace will return a loop instance. It can receive servarl arguments:
-
 | Name              | Default   | Description                                                                                                                                |
 | ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | `duration`        | `3`       | sets the duration in seconds of the loop.                                                                                                  |
@@ -117,11 +113,11 @@ createLoop({
 
 #### noise options
 
-| Name     | Default                  | Description                                                                                                    |
-| -------- | ------------------------ | -------------------------------------------------------------------------------------------------------------- |
-| `radius` | `1`                      | radius of the circle in a noise field to query                                                                 |
-| `seed`   | `Math.random() * 999999` | noise field offset                                                                                             |
-| `theta`  | `loop.theta`             | By defalt is elapsed loop progress around a circle. This can be set in noise functions but not in `createLoop` |
+| Name     | Default           | Description                                                                                                    |
+| -------- | ----------------- | -------------------------------------------------------------------------------------------------------------- |
+| `radius` | `1`               | radius of the circle in a noise field to query                                                                 |
+| `seed`   | `random(0,99999)` | noise field offset                                                                                             |
+| `theta`  | `loop.theta`      | By defalt is elapsed loop progress around a circle. This can be set in noise functions but not in `createLoop` |
 
 
 #### gif options

@@ -4,7 +4,7 @@
   "description": "Create animation loops with noise and GIF exports in one line of code.",
   "main": "src/index.js",
   "dependencies": {
-    "createloop": "0.0.7",
+    "createloop": "0.0.11",
     "p5": "^0.8.0"
   },
   "devDependencies": {
@@ -14,11 +14,11 @@
     "webpack-dev-server": "^3.3.1"
   },
   "scripts": {
-    "prepublishOnly": "powershell ./prepublish.ps1",
+    "prepublishOnly": "powershell ./scripts/prepublish.ps1",
     "test": "cd examples && live-server",
-    "update-dependencies": "powershell ./update.ps1",
+    "update-dependencies": "powershell ./scripts/update.ps1",
     "start": "webpack-dev-server --open",
-    "build": "powershell ./build.ps1"
+    "build": "powershell ./scripts/build.ps1"
   },
   "repository": {
     "type": "git",
