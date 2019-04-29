@@ -38,5 +38,6 @@ function attachCreateLoop() {
             window.animLoop = sketch.animLoop
         onPreRender.addListener(sketch.animLoop.preRender)
         onPostRender.addListener(sketch.animLoop.postRender)
+        return sketch.animLoop
     }
 }
