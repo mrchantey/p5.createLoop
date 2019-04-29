@@ -15,7 +15,7 @@ Features include:
 html:
 ```html
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
-    <script src="https://unpkg.com/p5.createloop@0.0.20/dist/p5.createloop.js"></script>
+    <script src="https://unpkg.com/p5.createloop@0.0.21/dist/p5.createloop.js"></script>
 ```
 
 javascript:

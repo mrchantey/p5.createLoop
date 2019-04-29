@@ -17,6 +17,7 @@
     "prepublishOnly": "powershell ./scripts/prepublish.ps1",
     "test": "cd examples && live-server",
     "update-dependencies": "powershell ./scripts/update.ps1",
+    "update-readme": "node ./scripts/update-readme.js",
     "start": "webpack-dev-server --open",
     "build": "powershell ./scripts/build.ps1"
   },
