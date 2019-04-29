@@ -1,4 +1,6 @@
 Write-Output "patching version.."
+git.exe add .
+git.exe commit -m 'patch'
 npm.cmd version patch
 npm.cmd version
 Write-Output "building project.."
