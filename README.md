@@ -6,11 +6,11 @@ Features include:
 - GIF image rendering
 - noise loops
 
-<!-- **Ye be warned** This is a baby library and has a lot of growing up to do. Bugs and breaking changes ahoy. -->
+## Usage
 
-## Example
-
-![p5 simple example](examples/images_compressed/simpleLoop.gif)
+<a href = "https://codepen.io/peteyhayman/pen/KYYmbB">
+<img src="examples/images_compressed/simpleLoop.gif">
+</a>
 
 html:
 ```html
@@ -38,52 +38,53 @@ function draw() {
 
 ```
 
-## More examples
+## Examples
 
-### [Noise Loop](examples/js/noiseLoop.js)
+### [Noise Loop](https://codepen.io/peteyhayman/pen/ZZZKzv)
 
-- Begins recording the GIF after the first loop
-- y pos is `animLoop.noise()`
-- x pos is cosine of `animLoop.theta`
+- makes use of `animLoop.noise()`
 
-![Noise Loop Example](examples/images_compressed/noiseLoop.gif)
+<a href = "https://codepen.io/peteyhayman/pen/ZZZKzv">
+<img src="examples/images_compressed/noiseLoop.gif">
+</a>
 
-### [Noise Loop 2x](examples/js/noiseLoop2x.js)
+
+### [Noise Loop 2x]([examples/js/noiseLoop2x.js](https://codepen.io/peteyhayman/pen/EJJmxe))
 
 - two noise seeds, one for x and one for y
 
-![Noise Loop 2x Example](examples/images/noiseLoop2x.gif)
+<a href = "https://codepen.io/peteyhayman/pen/EJJmxe">
+<img src="examples/images_compressed/noiseLoop2x.gif">
+</a>
 
-### [Noise Loop 1D](examples/js/noiseLoop1d.js)
+### [Noise Loop 1D]([examples/js/noiseLoop1d.js](https://codepen.io/peteyhayman/pen/bJJWYR))
 
 - a noise value for each x position
 
-![Noise Loop 1D Example](examples/images_compressed/noiseLoop1d.gif)
+<a href = "https://codepen.io/peteyhayman/pen/bJJWYR">
+<img src="examples/images_compressed/noiseLoop1d.gif">
+</a>
 
-### [Noise Loop 2D](examples/js/noiseLoop2d.js)
+
+### [Noise Loop 2D](https://codepen.io/peteyhayman/pen/zXXwmX)
 
 - a noise value for each x and y position
 
-![Noise Loop 2D Example](examples/images_compressed/noiseLoop2d.gif)
+<a href = "https://codepen.io/peteyhayman/pen/zXXwmX">
+<img src="examples/images_compressed/noiseLoop2d.gif">
+</a>
 
-### 
-<!-- - also works in instance mode -->
-
-<!-- ![Instance Mode Example](examples/images_compressed/instanceMode.gif) -->
-
-
+<!-- ###  -->
+### [also works in instance mode](https://codepen.io/peteyhayman/pen/OGGmKO)
 
 
 ## Documentation
 
-p5.createLoop works to make creating animation loops feel native to p5.
- When a sketch is initialized the following are attatched to it:
+When a sketch is initialized the following are attatched to it:
 - [createLoop()](README.md#createLoop())
   - a function to be called in `setup()`
 - [animLoop](README.md#animLoop)
   - an object containing helpful properties and methods for `draw()` 
-
-(this also works in )
 
 ### createLoop()
 
@@ -157,6 +158,10 @@ Because the aim here is to get loopin asap, this object provides some valuable p
 | `noiseSeed()`          | set the noise seed. See [noise options](README.md#noise-options)                       |
 | `noiseRadius()`        | set the noise radius. See [noise options](README.md#noise-options)                     |
 
+### Read more
+
+- [codepen collection](https://codepen.io/collection/AZydLQ/#)
+
 ### Contributions
 
 Climb aboard! Make an issue or pull request on the [gitHub page](https://github.com/piratesjustar/p5.createLoop)
@@ -165,32 +170,37 @@ Climb aboard! Make an issue or pull request on the [gitHub page](https://github.
 
 - add easing functions
 - set GIF size to reflect pixel density
+- add draw option to stay in sync with GIF loop
 
 ### patch notes
-- 0.0.21 - 15/04/2019
-    - createLoop returns the animLoop object
-    - README script tags reflect version
+- 0.1.1 - 30/04/2019
+  - added codepen examples
+- 0.1.0 - 30/04/2019
+  - stable release
+- 0.0.21 - 30/04/2019
+  - createLoop returns the animLoop object
+  - README script tags reflect version
 - 0.0.18 - 15/04/2019
-    - updated to createLoop 0.0.7
+  - updated to createLoop 0.0.7
 - 0.0.17 - 15/04/2019
-    - updated to createLoop 0.0.6
+  - updated to createLoop 0.0.6
 - 0.0.16 - 15/04/2019
-    - can handle webpack without adding p5 to global namespace
+  - can handle webpack without adding p5 to global namespace
 - 0.0.15 - 15/04/2019
-    - p5 must be externally required
+  - p5 must be externally required
 - 0.0.12 - 15/04/2019
-    - remove full size images from package
+  - remove full size images from package
 - 0.0.11 - 15/04/2019
-    - removed p5 from bundle
-    - where p5._targetFrameRate is undefined, uses p5._frameRate instead
+  - removed p5 from bundle
+  - where p5._targetFrameRate is undefined, uses p5._frameRate instead
 - 0.0.10 - 15/04/2019
-    - enabled use as a package
-    - added p5 as dependency
+  - enabled use as a package
+  - added p5 as dependency
 - 0.0.6 - 15/04/2019
-    - compressed example images
+  - compressed example images
 - 0.0.4 - 14/04/2019
-    - fixed README image bug
+  - fixed README image bug
 - 0.0.2 - 14/04/2019
-    - using script tags in examples
+  - using script tags in examples
 - 0.0.1 - 14/04/2019
-    - initial release
+  - initial release
