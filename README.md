@@ -8,7 +8,7 @@ Features include:
 
 ## Usage
 
-<a href = "https://codepen.io/peteyhayman/pen/KYYmbB">
+<a target="_blank" href = "https://codepen.io/peteyhayman/pen/KYYmbB">
 <img src="examples/images_compressed/simpleLoop.gif">
 </a>
 
@@ -44,7 +44,7 @@ function draw() {
 
 - makes use of `animLoop.noise()`
 
-<a href = "https://codepen.io/peteyhayman/pen/ZZZKzv">
+<a target="_blank" href = "https://codepen.io/peteyhayman/pen/ZZZKzv">
 <img src="examples/images_compressed/noiseLoop.gif">
 </a>
 
@@ -53,7 +53,7 @@ function draw() {
 
 - two noise seeds, one for x and one for y
 
-<a href = "https://codepen.io/peteyhayman/pen/EJJmxe">
+<a target="_blank" href = "https://codepen.io/peteyhayman/pen/EJJmxe">
 <img src="examples/images_compressed/noiseLoop2x.gif">
 </a>
 
@@ -61,7 +61,7 @@ function draw() {
 
 - a noise value for each x position
 
-<a href = "https://codepen.io/peteyhayman/pen/bJJWYR">
+<a target="_blank" href = "https://codepen.io/peteyhayman/pen/bJJWYR">
 <img src="examples/images_compressed/noiseLoop1d.gif">
 </a>
 
@@ -70,7 +70,7 @@ function draw() {
 
 - a noise value for each x and y position
 
-<a href = "https://codepen.io/peteyhayman/pen/zXXwmX">
+<a target="_blank" href = "https://codepen.io/peteyhayman/pen/zXXwmX">
 <img src="examples/images_compressed/noiseLoop2d.gif">
 </a>
 
@@ -81,9 +81,9 @@ function draw() {
 ## Documentation
 
 When a sketch is initialized the following are attatched to it:
-- [createLoop()](README.md#createLoop())
+- [createLoop()](#createloop-1)
   - a function to be called in `setup()`
-- [animLoop](README.md#animLoop)
+- [animLoop](#animLoop)
   - an object containing helpful properties and methods for `draw()` 
 
 ### createLoop()
@@ -94,14 +94,16 @@ createLoop(options)
 createLoop(duration,options)
 ```
 
-| Name              | Default   | Description                                                                                              |
-| ----------------- | --------- | -------------------------------------------------------------------------------------------------------- |
-| `duration`        | `3`       | sets the duration in seconds of the loop.                                                                |
-| `framesPerSecond` | `30`      | approximate fps of the loop. This is the same as calling `frameRate()`                                   |
-| `noise`           | `options` | See [noise options](README.md#noise-options)                                                             |
-| `gif`             | `false`   | can also accept `true` or `options` to be passed to GIF module. See [gif options](README.md#gif-options) |
+#### createLoop options
+| Name              | Default   | Description                                                                                     |
+| ----------------- | --------- | ----------------------------------------------------------------------------------------------- |
+| `duration`        | `3`       | sets the duration in seconds of the loop.                                                       |
+| `framesPerSecond` | `30`      | approximate fps of the loop. This is the same as calling `frameRate()`                          |
+| `noise`           | `options` | See [noise options](#noise-options)                                                             |
+| `gif`             | `false`   | can also accept `true` or `options` to be passed to GIF module. See [gif options](#gif-options) |
 
 Options can be passed as an object:
+
 ```js
 createLoop({
     noise:{
@@ -152,11 +154,11 @@ Because the aim here is to get loopin asap, this object provides some valuable p
 | ---------------------- | -------------------------------------------------------------------------------------- |
 | `progress`             | linear progress of the loop with a range of `0 to 1`                                   |
 | `theta`                | angular progress of the loop in radians with range `0 to TWO_PI`                       |
-| `noise(options)`       | returns a noise value between -1 and 1. See [noise options](README.md#noise-options)   |
+| `noise(options)`       | returns a noise value between -1 and 1. See [noise options](#noise-options)            |
 | `noise1D(x,options)`   | Same as above also accepting an `x` value, providing a 1D line of noise for each frame |
 | `noise2D(x,y,options)` | Same as above also accepting a `y` value, providing a 2D plane of noise                |
-| `noiseSeed()`          | set the noise seed. See [noise options](README.md#noise-options)                       |
-| `noiseRadius()`        | set the noise radius. See [noise options](README.md#noise-options)                     |
+| `noiseSeed()`          | set the noise seed. See [noise options](#noise-options)                                |
+| `noiseRadius()`        | set the noise radius. See [noise options](#noise-options)                              |
 
 ### Read more
 
