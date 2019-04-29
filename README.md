@@ -49,7 +49,7 @@ function draw() {
 </a>
 
 
-### [Noise Loop 2x]([examples/js/noiseLoop2x.js](https://codepen.io/peteyhayman/pen/EJJmxe))
+### [Noise Loop 2x](https://codepen.io/peteyhayman/pen/EJJmxe)
 
 - two noise seeds, one for x and one for y
 
@@ -57,7 +57,7 @@ function draw() {
 <img src="examples/images_compressed/noiseLoop2x.gif">
 </a>
 
-### [Noise Loop 1D]([examples/js/noiseLoop1d.js](https://codepen.io/peteyhayman/pen/bJJWYR))
+### [Noise Loop 1D](https://codepen.io/peteyhayman/pen/bJJWYR)
 
 - a noise value for each x position
 
@@ -81,9 +81,9 @@ function draw() {
 ## Documentation
 
 When a sketch is initialized the following are attatched to it:
-- [createLoop()](#createloop-1)
+- [createLoop()](#createloop)
   - a function to be called in `setup()`
-- [animLoop](#animLoop)
+- [animLoop](#animloop)
   - an object containing helpful properties and methods for `draw()` 
 
 ### createLoop()
@@ -141,7 +141,7 @@ some notes on making GIF images:
 | `open`      | `false`     | open the gif image in a new tab or window                                                                               |
 | `download`  | `false`     | download the gif automatically                                                                                          |
 | `fileName`  | `image.gif` | name of the downloaded GIF file                                                                                         |
-| `startLoop` | `0`         | loop index to begin recording the GIF. see [Noise Loop](examples/js/noiseLoop.js) example                               |
+| `startLoop` | `0`         | loop index to begin recording the GIF                                                                                   |
 | `endLoop`   | `1`         | loop index to end recording the GIF                                                                                     |
 | `canvas`    | `<canvas>`  | the canvas to render. By default this is the sketch canvas                                                              |
 | `options`   | `{}`        | options to pass to gif.js encoder. see [gif.js documentation](https://github.com/jnordberg/gif.js#user-content-options) |
