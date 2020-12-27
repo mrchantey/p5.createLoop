@@ -14,8 +14,8 @@ Features include:
 
 html:
 ```html
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
-    <script src="https://unpkg.com/p5.createloop@0.1.3/dist/p5.createloop.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+    <script src="https://unpkg.com/p5.createloop@0.2.0/dist/p5.createloop.js"></script>
 ```
 
 javascript:
@@ -175,6 +175,8 @@ Climb aboard! Make an issue or pull request on the [gitHub page](https://github.
 - add draw option to stay in sync with GIF loop
 
 ### patch notes
+- 0.2.0 - 27/12/2020
+  - fixed warning in p5 1.2 "p5 had problems creating the global function..."
 - 0.1.1 - 30/04/2019
   - added codepen examples
 - 0.1.0 - 30/04/2019
