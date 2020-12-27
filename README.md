@@ -14,7 +14,7 @@ Features include:
 
 html:
 ```html
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.2.1/lib/p5.js"></script>
     <script src="https://unpkg.com/p5.createloop@0.2.0/dist/p5.createloop.js"></script>
 ```
 
