@@ -8,7 +8,7 @@ const readme = fs.readFileSync(readmePath).toString();
 
 const regex = /createloop@+\d.+\d.+\d\//
 
-const updatedReadme = readme.replace(regex, `@${package.version}/`)
+const updatedReadme = readme.replace(regex, `createloop@${package.version}/`)
 
 // console.log(readme);
 
