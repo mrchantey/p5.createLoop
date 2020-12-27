@@ -6,7 +6,7 @@ const package = require('../package.json');
 
 const readme = fs.readFileSync(readmePath).toString();
 
-const regex = /@+\d.+\d.+\d\//
+const regex = /createloop@+\d.+\d.+\d\//
 
 const updatedReadme = readme.replace(regex, `@${package.version}/`)
 
