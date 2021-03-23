@@ -88,8 +88,9 @@ When a sketch is initialized the following are attatched to it:
 
 ### createLoop()
 
-This function can be called in two ways:
+This function can be called in three ways:
 ```javascript
+createLoop() //defaults to three second duration
 createLoop(options)
 createLoop(duration,options)
 ```
