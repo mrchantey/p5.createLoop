@@ -1,0 +1,43 @@
+{
+	"name": "p5.createloop",
+	"version": "0.2.9",
+	"description": "Create animation loops with noise and GIF exports in one line of code.",
+	"main": "src/index.js",
+	"dependencies": {
+		"createloop": "0.0.12",
+		"p5": "^0.8.0"
+	},
+	"devDependencies": {
+		"source-map-loader": "^0.2.4",
+		"webpack": "^4.30.0",
+		"webpack-cli": "^3.3.0",
+		"webpack-dev-server": "^3.3.1"
+	},
+	"scripts": {
+		"prepublishOnly": "powershell ./scripts/prepublish.ps1",
+		"test": "cd examples && live-server",
+		"update-dependencies": "powershell ./scripts/update.ps1",
+		"update-readme": "node ./scripts/update-readme.js",
+		"start": "webpack-dev-server --open",
+		"build": "powershell ./scripts/build.ps1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mrchantey/createLoop.git"
+	},
+	"keywords": [
+		"createLoop",
+		"p5",
+		"create",
+		"loop",
+		"animation",
+		"processing",
+		"gif",
+		"noiseloop",
+		"noise",
+		"perlin",
+		"simplex"
+	],
+	"author": "Peter Hayman",
+	"license": "ISC"
+}
