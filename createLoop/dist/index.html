@@ -1,0 +1,69 @@
+<!-- This document for testing only -->
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>createLoop Test</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #333333;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+    <script src="main.js"></script>
+    <script>
+        window.addEventListener('load', _ => {
+            const canvas = document.createElement('canvas')
+            document.body.appendChild(canvas)
+            const ctx = canvas.getContext('2d')
+
+            const loopOptions =
+            {
+                duration: 2,
+                framesPerSecond: 10,
+                gif: true,
+                noiseSeed: 0,
+                canvas,
+                gifOnFinishRender: (blob) => console.log('callback on finish rendering', {
+                    blob
+                })
+            }
+
+
+            // console.log(loopOptions.canvas);
+
+            const loop = createLoop(loopOptions)
+
+            loop.start(render)
+            const xx = Math.random()
+            const yy = Math.random()
+
+            function render() {
+                const hw = canvas.width / 2
+                const hh = canvas.height / 2
+                const grd = ctx.createRadialGradient(hw, hh, 0, hw, hh, hh)
+                // const hue = (loop.noise(loop.theta, 0.05) * 0.5 + 0.5) * 360
+                const hue = (loop.noise({ radius: 0.1 }) * 0.5 + 0.5) * 360
+                // console.log(hue);
+                grd.addColorStop(0, `hsl(${hue},100%,50%)`)
+                grd.addColorStop(1, `white`)
+                ctx.fillStyle = grd
+                ctx.fillRect(0, 0, canvas.width, canvas.height)
+                //post render must be called to add GIF frames
+            }
+        })
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
