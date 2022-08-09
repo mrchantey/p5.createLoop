@@ -1,6 +1,6 @@
 {
 	"name": "p5.createloop",
-	"version": "0.2.9",
+	"version": "0.2.10",
 	"description": "Create animation loops with noise and GIF exports in one line of code.",
 	"main": "src/index.js",
 	"dependencies": {
