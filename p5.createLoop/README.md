@@ -38,6 +38,8 @@ function draw() {
 
 ```
 
+**Note** Currently the only supported method is with script tags. `require` and `import` will not work.
+
 ## Examples
 
 ### [Noise Loop](https://codepen.io/peteyhayman/pen/ZZZKzv)
