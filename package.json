@@ -1,17 +1,18 @@
 {
 	"name": "p5.createloop",
-	"version": "0.2.12",
+	"version": "0.2.13",
 	"description": "Create animation loops with noise and GIF exports in one line of code.",
 	"main": "src/index.js",
 	"dependencies": {
-		"createloop": "0.0.12",
-		"p5": "^0.8.0"
+		"p5": "^0.8.0",
+		"gif.js": "^0.2.0",
+		"simplex-noise": "^2.4.0"
 	},
 	"devDependencies": {
 		"source-map-loader": "^0.2.4",
-		"webpack": "^4.30.0",
-		"webpack-cli": "^3.3.0",
-		"webpack-dev-server": "^3.3.1"
+		"webpack": "^5.75.0",
+		"webpack-cli": "^5.0.1",
+		"webpack-dev-server": "^4.11.1"
 	},
 	"scripts": {
 		"prepublishOnly": "powershell ./scripts/prepublish.ps1",
@@ -23,7 +24,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/mrchantey/createLoop.git"
+		"url": "git+https://github.com/mrchantey/p5.createLoop.git"
 	},
 	"keywords": [
 		"createLoop",

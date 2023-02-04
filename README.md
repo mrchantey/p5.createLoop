@@ -1,6 +1,6 @@
 # p5.createLoop
 
-Create animation loops with noise and GIF exports in one line of code. This library is a lightweight wrapper of [createLoop](https://www.npmjs.com/package/createloop).
+Create animation loops with noise and GIF exports in one line of code.
 
 Features include:
 - GIF image rendering
@@ -15,7 +15,7 @@ Features include:
 html:
 ```html
 <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
-<script src="https://unpkg.com/p5.createloop@0.2.12/dist/p5.createloop.js"></script>
+<script src="https://unpkg.com/p5.createloop@0.3.0/dist/p5.createloop.js"></script>
 ```
 
 javascript:
@@ -138,16 +138,17 @@ some notes on making GIF images:
 - The built in p5 `frameRate()` function will also set the delay between GIF frames
 - The GIF encoder [gif.js](https://github.com/jnordberg/gif.js) uses web workers to render the GIF asynchronously 
 
-| Name        | Default     | Description                                                                                                             |
-| ----------- | ----------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `render`    | `true`      | render the GIF image alongside the sketch. Clicking on the image will begin downloading the GIF                         |
-| `open`      | `false`     | open the gif image in a new tab or window                                                                               |
-| `download`  | `false`     | download the gif automatically                                                                                          |
-| `fileName`  | `image.gif` | name of the downloaded GIF file                                                                                         |
-| `startLoop` | `0`         | loop index to begin recording the GIF                                                                                   |
-| `endLoop`   | `1`         | loop index to end recording the GIF                                                                                     |
-| `canvas`    | `<canvas>`  | the canvas to render. By default this is the sketch canvas                                                              |
-| `options`   | `{}`        | options to pass to gif.js encoder. see [gif.js documentation](https://github.com/jnordberg/gif.js#user-content-options) |
+| Name             | Default     | Description                                                                                                             |
+| ---------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `render`         | `true`      | render the GIF image alongside the sketch. Clicking on the image will begin downloading the GIF                         |
+| `open`           | `false`     | open the gif image in a new tab or window                                                                               |
+| `download`       | `false`     | download the gif automatically                                                                                          |
+| `fileName`       | `image.gif` | name of the downloaded GIF file                                                                                         |
+| `startLoop`      | `0`         | loop index to begin recording the GIF                                                                                   |
+| `endLoop`        | `1`         | loop index to end recording the GIF                                                                                     |
+| `canvas`         | `<canvas>`  | the canvas to render. By default this is the sketch canvas                                                              |
+| `onFinishRender` | `undefined` | callback when rendering is complete, containing a blob of the rendered gif                                              |
+| `options`        | `{}`        | options to pass to gif.js encoder. see [gif.js documentation](https://github.com/jnordberg/gif.js#user-content-options) |
 
 ### animLoop
 
@@ -178,6 +179,10 @@ Climb aboard! Make an issue or pull request on the [gitHub page](https://github.
 - add draw option to stay in sync with GIF loop
 
 ### patch notes
+- 0.3.0 - 04/02/2023
+  - merge p5.createLoop and createLoop packages
+  - add `onFinishRender` callback
+  - update webpack
 - 0.2.0 - 27/12/2020
   - fixed warning in p5 1.2 "p5 had problems creating the global function..."
 - 0.1.1 - 30/04/2019

@@ -50,7 +50,11 @@
 				p.colorMode(p.RGB, 1)
 				// p.frameRate(20)
 				p.fill(0)
-				p.createLoop({ noiseRadius: 0.1, gif: { fileName: "instanceMode.gif" } })
+				p.createLoop({
+					noiseRadius: 0.1, gif: {
+						fileName: "instanceMode.gif",
+					}
+				})
 			}
 
 			p.draw = _ => {
