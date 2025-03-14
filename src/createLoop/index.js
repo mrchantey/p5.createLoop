@@ -1,4 +1,5 @@
-window.createLoop = require('./createLoop')
+const createLoop = require('./createLoop');
+module.exports = createLoop;
 // (function (f) {
 //     // if (typeof exports === "object" && typeof module !== "undefined") {
 

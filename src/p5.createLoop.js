@@ -1,4 +1,5 @@
 // require('createLoop');
+const createLoopFunc = require('./createLoop');
 const event = require('./event');
 
 module.exports = attachCreateLoop
@@ -12,15 +13,24 @@ function attachCreateLoop() {
 	const onPreRender = event()
 	const onPostRender = event()
 
-	p5.prototype.registerMethod('init', onInit.invoke)
-	p5.prototype.registerMethod('pre', onPreRender.invoke)
-	p5.prototype.registerMethod('post', onPostRender.invoke)
+	if(p5.prototype.registerMethod){
+		// p5.js 1.x lifecycle hooks
+		p5.prototype.registerMethod('init', onInit.invoke)
+		p5.prototype.registerMethod('pre', onPreRender.invoke)
+		p5.prototype.registerMethod('post', onPostRender.invoke)
+	}else{
+		// p5.js 2.0 lifecycle hooks
+		p5.registerAddon(function(p5, fn, lifecycles){
+			lifecycles.presetup = onInit.invoke;
+			lifecycles.predraw = onPreRender.invoke;
+			lifecycles.postdraw = onPostRender.invoke;
+		});
+	}
 
-	const createLoopFunc = window.createLoop
-
+	// const createLoopFunc = window.createLoop
 
 	//most of this function is enabling ease of use in a 'p5 friendly' way
-	function instanceCreateLoop(options = {}, options2 = {}) {
+	p5.prototype.createLoop = function(options = {}, options2 = {}) {
 		const sketch = this
 		const loopOptions = {
 			framesPerSecond: sketch._targetFrameRate || sketch._frameRate || 60,
@@ -37,28 +47,15 @@ function attachCreateLoop() {
 			Object.assign(loopOptions, options2)
 
 		console.log(`creating ${loopOptions.duration} second loop at ${loopOptions.framesPerSecond} fps`);
-		sketch.animLoop = createLoopFunc(loopOptions)
-		if (sketch._isGlobal)
-			window.animLoop = sketch.animLoop
+		// sketch.animLoop = createLoopFunc(loopOptions)
+		createLoopFunc(loopOptions, sketch.animLoop);
+		// if (sketch._isGlobal)
+		// 	window.animLoop = sketch.animLoop
 		onPreRender.addListener(sketch.animLoop.preRender)
 		onPostRender.addListener(sketch.animLoop.postRender)
-		return sketch.animLoop
+		// return sketch.animLoop
 	}
 
-
-
-	//I need to know whether global or local before calling setup function
-	//but after initialization
-	p5.prototype.registerMethod('init', function () {
-		var superSetup = this._setup
-		this._setup = _ => {
-			if (this._isGlobal) {
-				window.createLoop = instanceCreateLoop
-			} else {
-				this.createLoop = instanceCreateLoop
-			}
-			superSetup()
-		}
-	})
+	p5.prototype.animLoop = {};
 }
 

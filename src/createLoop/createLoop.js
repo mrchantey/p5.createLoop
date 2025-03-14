@@ -20,11 +20,11 @@ function createLoop({
     noiseRadius = undefined,
     noiseSeed = undefined,
     canvas = undefined,
-} = {}) {
+} = {}, loop = {}) {
 
     // console.log(canvas);
 
-    const loop = {}
+    // const loop = {}
 
     animationLoop({ framesPerSecond, duration, loop });
 
